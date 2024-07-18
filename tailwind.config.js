@@ -8,7 +8,14 @@ export default {
     fontFamily : {
       primary : "Poppins"
     },
-    extend: {},
+    extend: {
+      backgroundColor : {
+        primary : '#202227',
+        input : '#282A2F',
+        stroke : '#8692A6',
+        secondary : '#5871EB'
+      }
+    },
   },
   plugins: [],
 }

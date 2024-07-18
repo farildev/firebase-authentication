@@ -1,6 +1,9 @@
+import Login from "@/views/Auth/Login"
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Login />
+    </div>
   )
 }
 
