@@ -16,6 +16,13 @@ li{
   list-style: none;
 }
 
+.siteContainer{
+  max-width: 1680px;
+  width: 100%;
+  padding : 0 20px;
+  margin: 0 auto;
+}
+
 @layer base{
   #root, body,html{
     @apply w-full h-screen overflow-x-hidden font-primary

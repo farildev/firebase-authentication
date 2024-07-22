@@ -1,9 +1,11 @@
-import Login from "@/views/Auth/Login"
+import AllRoutes from "./routes"
+import { Fragment } from "react"
+
 const App = () => {
   return (
-    <div>
-      <Login />
-    </div>
+    <Fragment>
+      <AllRoutes />
+    </Fragment>
   )
 }
 
