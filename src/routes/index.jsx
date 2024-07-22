@@ -2,9 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import Login from "@/views/Auth/Login";
 import Register from "@/views/Auth/Register";
 import Home from "@/views/App/Home";
-import AddFilm from "@/views/App/AddFilm";
 import AppLayout from "@/layouts/AppLayout";
 import AuthLayout from "@/layouts/AuthLayout";
+import AddMovie from "@/views/App/AddMovie";
+import FavoriteMovies from "@/views/App/FavoriteMovies";
+import Movies from "@/views/App/Movies";
+
 const AllRoutes = () => {
   return (
     <Routes>
@@ -14,7 +17,9 @@ const AllRoutes = () => {
       </Route>
       <Route element={<AppLayout />}>
         <Route path="/" element={<Home />}/>
-        <Route path="/add-film" element={<AddFilm/>}/>
+        <Route path="/add-movie" element={<AddMovie/>}/>
+        <Route path="/favorite-movies" element={<FavoriteMovies/>}/>
+        <Route path="/movies" element={<Movies/>}/>
       </Route>
     </Routes>
   )

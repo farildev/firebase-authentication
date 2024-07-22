@@ -25,6 +25,6 @@ li{
 
 @layer base{
   #root, body,html{
-    @apply w-full h-screen overflow-x-hidden font-primary
+    @apply w-full h-screen overflow-x-hidden font-primary bg-primary text-white
   }
 }
