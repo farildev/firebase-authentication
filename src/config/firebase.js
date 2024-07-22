@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 import {getAuth , GoogleAuthProvider} from "firebase/auth"
 const firebaseConfig = {
-  apiKey: "AIzaSyCm0s93KD98PzZiAyQT1CsP6gPnzi-Exn4",
-  authDomain: "filmino-app.firebaseapp.com",
-  projectId: "filmino-app",
-  storageBucket: "filmino-app.appspot.com",
-  messagingSenderId: "1073729325285",
-  appId: "1:1073729325285:web:47f509e7e213c5935f6c0c",
-  measurementId: "G-8EHSB1T9F8"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
