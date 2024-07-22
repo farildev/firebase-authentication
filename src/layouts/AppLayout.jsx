@@ -12,9 +12,12 @@ const AppLayout = () => {
     return <Navigate to="/login" replace />
   }
   return (
-    <main>
-      <Outlet />
-    </main>
+    <div>
+      
+      <main className="bg-primary h-screen text-white">
+        <Outlet />
+      </main>
+    </div>
   )
 }
 

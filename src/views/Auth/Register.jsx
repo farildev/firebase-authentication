@@ -1,16 +1,15 @@
 import background from "@/assets/images/bg.jpg";
 import logo from "@/assets/images/logo.svg";
-import Divider from "@/components/Divider";
+import Divider from "@/components/Auth/Divider";
 import {createUserWithEmailAndPassword, signInWithPopup} from "firebase/auth"
 import { useState } from "react";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { auth, googleProvider } from "@/config/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password , setPassword] = useState('');
   const [visibilityPassword, setVisibilityPassword] = useState(false);
@@ -21,12 +20,13 @@ const Register = () => {
   }
 
   const handleRegister = async () =>{
-    try{
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/')
-    }catch(err){
-      console.log(err)
-    }
+      if(!email || !password){
+        return null;
+      }
+      await createUserWithEmailAndPassword(auth, email, password)
+      .catch((err) => {
+        console.log(err)
+      })
   };
 
   const registerWithGoogle = async() => {
@@ -85,6 +85,7 @@ const Register = () => {
               </div>
             </div>
           </form>
+          <div className="mt-5 text-sm text-gray-300">Have you any account?<Link className="underline text-white" to='/login'> Sign In</Link></div>
           <button onClick={handleRegister} className="text-white bg-secondary p-4 text-sm font-base outline-none rounded-lg mt-8">Register Account</button>
           <Divider />
           <button onClick={registerWithGoogle} className="text-white bg-black p-4 text-sm font-base outline-none rounded-lg mt-5 flex items-center justify-center gap-2"><FcGoogle size={18}/>Register with Google</button>
