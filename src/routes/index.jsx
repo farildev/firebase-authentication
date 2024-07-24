@@ -7,6 +7,7 @@ import AuthLayout from "@/layouts/AuthLayout";
 import AddMovie from "@/views/App/AddMovie";
 import FavoriteMovies from "@/views/App/FavoriteMovies";
 import Movies from "@/views/App/Movies";
+import ForgotPassword from "@/views/Auth/ForgotPassword";
 
 const AllRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AllRoutes = () => {
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Route>
       <Route element={<AppLayout />}>
         <Route path="/" element={<Home />}/>

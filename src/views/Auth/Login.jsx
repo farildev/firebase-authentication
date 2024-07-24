@@ -80,7 +80,10 @@ const Login = () => {
               </div>
             </div>
           </form>
-          <div className="mt-5 text-sm text-gray-300">Have not any account?<Link className="underline text-white" to='/register'> Sign up</Link></div>
+          <div className="flex items-center justify-between mt-5">
+            <div className="text-xs text-gray-300">Have not any account?<Link className="underline" to='/register'> Sign up</Link></div>
+            <Link className="text-xs font-light text-gray-400 hover:underline" to='/forgot-password'>Forgot Password?</Link>
+          </div>
           <button onClick={handleLogin} className="text-white bg-secondary p-4 text-sm font-base outline-none rounded-lg mt-8">Login Account</button>
           <Divider />
           <button onClick={handleGoogleLogin} className="text-white bg-black p-4 text-sm font-base outline-none rounded-lg mt-5 flex items-center justify-center gap-2"><FcGoogle size={18}/>Login with Google</button>
