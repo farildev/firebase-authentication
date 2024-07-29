@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from '@/config/firebase';
 import { useState } from "react";
 import { useEffect } from "react";
+import LoadingScreen from "@/components/App/LoadingScreen";
 const Movies = () => {
   const [data,setData] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -25,7 +26,7 @@ const Movies = () => {
   },[moviesCollectionRef])
 
   if(loading){
-    <div className="w-full h-full bg-black text-white">Loading...</div>
+    <LoadingScreen />
   }
   return (
     <section className="p-10">

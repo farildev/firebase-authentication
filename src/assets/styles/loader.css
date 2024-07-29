@@ -1,0 +1,23 @@
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c:no-repeat radial-gradient(farthest-side,#f2f2f2 92%,#fff);
+  background: 
+    var(--_c) top,
+    var(--_c) left,
+    var(--_c) right,
+    var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+}
+@keyframes l7 {to{transform: rotate(.5turn)}}
+
+.backgroundStyle{
+/* From https://css.glass */
+background: rgba(0, 0, 0, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+}
