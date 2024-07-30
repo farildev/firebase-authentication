@@ -1,6 +1,6 @@
 import { PiFilmReelBold, PiFilmReelFill } from "react-icons/pi";
 import { MdOutlineSpaceDashboard, MdSpaceDashboard } from "react-icons/md";
-import { RiApps2AddFill,RiApps2AddLine } from "react-icons/ri";
+import { RiApps2AddFill, RiApps2AddLine } from "react-icons/ri";
 
 export const sidebarRoutes = [
   {
@@ -39,4 +39,15 @@ export const sidebarRoutes = [
       },
     ],
   },
+];
+
+export const genres = [
+  "Action",
+  "Comedy",
+  "Drama",
+  "Fantasy",
+  "Horror",
+  "Romance",
+  "Sci-Fi",
+  "Thriller",
 ];

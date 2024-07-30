@@ -1,10 +1,10 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import FilmCard from "@/components/App/FilmCard";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import FilmCard from "@/components/App/FilmCard";
 const Home = () => {
   return (
     <section className="flex items-center justify-between p-10 w-full">
-      <div className="w-full">
+      {/* <div className="w-full">
         <div className="flex flex-col w-full">
           <h1 className="text-2xl font-medium">🎥 All Movies</h1>
           <div className="w-full mt-5">
@@ -53,7 +53,7 @@ const Home = () => {
             </Swiper>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

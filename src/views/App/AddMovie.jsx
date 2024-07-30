@@ -3,6 +3,9 @@ import { addDoc, collection } from "firebase/firestore";
 import { db, auth, storage } from "@/config/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineAdd } from "react-icons/md";
+import SelectBox from "@/components/ui/SelectBox";
+import ImageSelect from "@/components/ui/ImageSelect";
 
 const AddMovie = () => {
   const [movieName, setMovieName] = useState('');
@@ -10,6 +13,8 @@ const AddMovie = () => {
   const [movieDirector, setMovieDirector] = useState('');
   const [movieDesc, setMovieDesc] = useState('');
   const [movieBanner, setMovieBanner] = useState(null);
+  const [movieRating, setMovieRating] = useState('');
+  const [movieGenre, setMovieGenre] = useState('');
   const moviesCollectionRef = collection(db, 'movies');
   const navigate = useNavigate();
 
@@ -28,8 +33,17 @@ const AddMovie = () => {
     setMovieDesc(e.target.value);
   };
 
+  const handleFilmRating = (e) => {
+    setMovieRating(parseFloat(e.target.value));
+  };
+
   const handleMovieBanner = (e) => {
     setMovieBanner(e.target.files[0])
+  }
+
+  const handleMovieGenre = (selectedGenre) => {
+    setMovieGenre(selectedGenre)
+    console.log(movieGenre)
   }
 
   const addMovieToCollection = async () => {
@@ -47,6 +61,7 @@ const AddMovie = () => {
         director: movieDirector,
         filmDescription: movieDesc,
         image: imageUrl,
+        rating : parseFloat(movieRating),
         userId
       });
       navigate('/movies');
@@ -63,41 +78,49 @@ const AddMovie = () => {
           <input
             onChange={handleMovieName}
             value={movieName}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
+            className="bg-white/5 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add movie name"
           />
           <input
             onChange={handleReleaseDate}
             value={movieRelease}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
+            className="bg-white/5 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add movie release date"
           />
           <input
             onChange={handleDirectorName}
             value={movieDirector}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
+            className="bg-white/5 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add director name"
           />
           <input
             onChange={handleFilmDesc}
             value={movieDesc}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
+            className="bg-white/5 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add film description"
           />
           <input
-            className="flex flex-col"
-            onChange={handleMovieBanner}
-            type="file"
+            onChange={handleFilmRating}
+            value={movieRating}
+            className="bg-white/5 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
+            type="number"
+            max={5}
+            placeholder="Add film rating"
           />
+          <SelectBox handleMovieGenre={handleMovieGenre} />
+        </div>
+        <div className="mt-3">
+          <ImageSelect handleMovieBanner={handleMovieBanner} />
         </div>
         <button
           onClick={addMovieToCollection}
-          className="bg-secondary mt-3 rounded-lg p-3 outline-none border-none"
+          className="bg-secondary mt-3 flex items-center gap-1 text-sm rounded-lg p-3 outline-none border-none"
         >
+          <MdOutlineAdd size={20}/>
           Add Movie
         </button>
       </div>
