@@ -5,7 +5,6 @@ import Home from "@/views/App/Home";
 import AppLayout from "@/layouts/AppLayout";
 import AuthLayout from "@/layouts/AuthLayout";
 import AddMovie from "@/views/App/AddMovie";
-import FavoriteMovies from "@/views/App/FavoriteMovies";
 import Movies from "@/views/App/Movies";
 import ForgotPassword from "@/views/Auth/ForgotPassword";
 
@@ -20,7 +19,6 @@ const AllRoutes = () => {
       <Route element={<AppLayout />}>
         <Route path="/" element={<Home />}/>
         <Route path="/add-movie" element={<AddMovie/>}/>
-        <Route path="/favorite-movies" element={<FavoriteMovies/>}/>
         <Route path="/movies" element={<Movies/>}/>
       </Route>
     </Routes>

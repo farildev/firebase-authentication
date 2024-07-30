@@ -1,5 +1,5 @@
 import { PiFilmReelBold, PiFilmReelFill } from "react-icons/pi";
-import { MdOutlineFavoriteBorder, MdOutlineSpaceDashboard, MdOutlineFavorite, MdSpaceDashboard } from "react-icons/md";
+import { MdOutlineSpaceDashboard, MdSpaceDashboard } from "react-icons/md";
 import { RiApps2AddFill,RiApps2AddLine } from "react-icons/ri";
 
 export const sidebarRoutes = [
@@ -36,18 +36,6 @@ export const sidebarRoutes = [
       },
       {
         passive: <RiApps2AddLine />,
-      },
-    ],
-  },
-  {
-    path: "/favorite-movies",
-    label: "Favorite Movies",
-    icons: [
-      {
-        active: <MdOutlineFavorite />,
-      },
-      {
-        passive: <MdOutlineFavoriteBorder />,
       },
     ],
   },

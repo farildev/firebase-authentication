@@ -1,8 +1,9 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '@/config/firebase';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/App/LoadingScreen";
+import { IoIosSearch } from "react-icons/io";
+
 const Movies = () => {
   const [data,setData] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -32,6 +33,10 @@ const Movies = () => {
     <section className="p-10">
       <div className="w-full">
         <h1 className="text-4xl font-medium">Movies</h1>
+        <div className="flex items-center gap-2 bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border w-full mt-5">
+          <IoIosSearch size={20}/>
+          <input type="text" className="w-full h-full bg-transparent outline-none text-sm" placeholder="Search movie, series & etc."  />
+        </div>
         <div className="mt-10 grid grid-cols-3">
           {
             data.map((item, index) => (

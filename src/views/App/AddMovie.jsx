@@ -28,6 +28,10 @@ const AddMovie = () => {
     setMovieDesc(e.target.value);
   };
 
+  const handleMovieBanner = (e) => {
+    setMovieBanner(e.target.files[0])
+  }
+
   const addMovieToCollection = async () => {
     let imageUrl = '';
     if (movieBanner) {
@@ -48,7 +52,7 @@ const AddMovie = () => {
       navigate('/movies');
     } catch (err) {
       console.error(err);
-    }
+    }    
   };
 
   return (
@@ -59,33 +63,34 @@ const AddMovie = () => {
           <input
             onChange={handleMovieName}
             value={movieName}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border"
+            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add movie name"
           />
           <input
             onChange={handleReleaseDate}
             value={movieRelease}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border"
+            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add movie release date"
           />
           <input
             onChange={handleDirectorName}
             value={movieDirector}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border"
+            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add director name"
           />
           <input
             onChange={handleFilmDesc}
             value={movieDesc}
-            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border"
+            className="bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border text-sm"
             type="text"
             placeholder="Add film description"
           />
           <input
-            onChange={(e) => setMovieBanner(e.target.files[0])}
+            className="flex flex-col"
+            onChange={handleMovieBanner}
             type="file"
           />
         </div>
