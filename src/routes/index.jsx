@@ -7,6 +7,7 @@ import AuthLayout from "@/layouts/AuthLayout";
 import AddMovie from "@/views/App/AddMovie";
 import Movies from "@/views/App/Movies";
 import ForgotPassword from "@/views/Auth/ForgotPassword";
+import MovieDetail from "@/views/App/MovieDetail";
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
         <Route path="/" element={<Home />}/>
         <Route path="/add-movie" element={<AddMovie/>}/>
         <Route path="/movies" element={<Movies/>}/>
+        <Route path="/movies/:id" element={<MovieDetail />} />
       </Route>
     </Routes>
   )

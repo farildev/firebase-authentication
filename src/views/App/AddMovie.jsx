@@ -61,6 +61,7 @@ const AddMovie = () => {
         director: movieDirector,
         filmDescription: movieDesc,
         image: imageUrl,
+        genre : movieGenre,
         rating : parseFloat(movieRating),
         userId
       });
