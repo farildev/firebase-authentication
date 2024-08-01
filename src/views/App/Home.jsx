@@ -1,59 +1,12 @@
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import FilmCard from "@/components/App/FilmCard";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
-    <section className="flex items-center justify-between p-10 w-full">
-      {/* <div className="w-full">
-        <div className="flex flex-col w-full">
-          <h1 className="text-2xl font-medium">🎥 All Movies</h1>
-          <div className="w-full mt-5">
-            <Swiper
-              className="w-full"
-              spaceBetween={50}
-              slidesPerView={3}
-              loop={true}
-            >
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-        <div className="flex flex-col w-full mt-10">
-          <h1 className="text-2xl font-medium">🫶 Favorite Series</h1>
-          <div className="w-full mt-5">
-            <Swiper
-              className="w-full"
-              spaceBetween={50}
-              slidesPerView={3}
-              loop={true}
-            >
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-              <SwiperSlide>
-                <FilmCard />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div> */}
+    <section className="flex items-center justify-between p-10 w-full h-screen">
+      <div className="h-full flex flex-col items-center justify-center w-full gap-5">
+        <h1 className="text-6xl font-semibold">Welcome to Filminoo! 👋</h1>
+        <p className="w-3/4 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, consequatur consequuntur. Quidem totam laudantium atque fugiat at nemo! Quae debitis modi ipsum, tenetur eos rem?</p>
+        <Link to="/movies" className="bg-secondary text-white  p-3 rounded-md">See all movies</Link>
+      </div>
     </section>
   );
 };
