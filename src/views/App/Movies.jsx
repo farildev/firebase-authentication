@@ -57,14 +57,14 @@ const Movies = () => {
   }
 
   return (
-    <section className="p-10 h-screen">
+    <section className="py-10 md:px-10 px-4 h-screen">
       <div className="w-full h-full relative">
-        <h1 className="text-4xl font-medium">Movies</h1>
-        <div className="flex items-center gap-2 bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border w-full mt-5">
+        <h1 className="md:text-4xl text-2xl font-medium">Movies</h1>
+        <div className="flex items-center gap-2 bg-neutral-700 md:p-3 p-2 rounded-lg text-white outline-none border-gray-300/20 border w-full mt-5">
           <IoIosSearch size={20} />
-          <input onChange={(e) => setSearchTerm(e.target.value)} type="text" className="w-full h-full bg-transparent outline-none text-sm" placeholder="Search movie, series & etc." />
+          <input onChange={(e) => setSearchTerm(e.target.value)} type="text" className="w-full h-full bg-transparent outline-none md:text-sm text-xs" placeholder="Search movie, series & etc." />
         </div>
-        <div className="mt-10 grid grid-cols-5 gap-4">
+        <div className="mt-10 grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-4 w-full">
         {
             filteredData.map((item, index) => (
               <FilmCard
