@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <section className="bg-primary text-white h-screen py-8">
       <div className="flex justify-between h-full siteContainer">
-        <div className="flex-1 flex flex-col px-10">
+        <div className="flex-1 flex flex-col md:px-10 px-4">
           <img className="w-[50px]" src={logo} alt="Logo" />
           <div className="flex flex-col mt-10">
             <h1 className="text-3xl font-semibold">Welcome Back 👋</h1>
