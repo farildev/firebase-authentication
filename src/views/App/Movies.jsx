@@ -57,8 +57,8 @@ const Movies = () => {
   }
 
   return (
-    <section className="p-10">
-      <div className="w-full">
+    <section className="p-10 h-screen">
+      <div className="w-full h-full relative">
         <h1 className="text-4xl font-medium">Movies</h1>
         <div className="flex items-center gap-2 bg-neutral-700 p-3 rounded-lg text-white outline-none border-gray-300/20 border w-full mt-5">
           <IoIosSearch size={20} />
