@@ -72,10 +72,10 @@ const AddMovie = () => {
   };
 
   return (
-    <section className="p-10 h-screen">
-      <div className="w-full">
-        <h1 className="text-4xl font-medium">Add Movie</h1>
-        <div className="mt-10 grid grid-cols-2 gap-2">
+    <section className="py-10 md:px-10 px-4 h-screen">
+      <div className="w-full pb-10">
+        <h1 className="md:text-4xl text-2xl font-medium">Add Movie</h1>
+        <div className="mt-10 grid md:grid-cols-2 grid-cols-1 gap-4">
           <input
             onChange={handleMovieName}
             value={movieName}
